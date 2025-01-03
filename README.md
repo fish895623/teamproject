@@ -35,18 +35,17 @@
   - e-북 리더기
   - 휴대용 게임기
 
-넣어야 할것들
+# 필수
 
-- 조건문 반복문
-- 상속
-- 인터페이스
-- 해시맵
-- @Getter @Setter
-- 다형성
-- 익명 객체
 - 예외 처리
 - 제네릭
-
+- Thread
+  - Runnable
+- 다형성 (매개변수로)
+  - extends, implements
+- 익명 객체
+- Collections
+  - 해시맵
 
 ```mermaid
 classDiagram
@@ -62,7 +61,15 @@ class Device {
     +폭
     +크기
 }
+class User {
+  -String user_id
+  -String user_pw
+}
+User --|> Admin
+class Admin
 
+User --|> Client
+class Client
 
 class `Interface Calculate` {
     +swim()
