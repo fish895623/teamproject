@@ -64,7 +64,7 @@ class KitchenDevice {
 }
 
 class `IDeviceInfo` {
-  <<Interface>>
+  <<interface>>
   +swim()
   +getSize()
   +printDeviceName()
@@ -212,3 +212,21 @@ classDiagram
     User --|> Admin
     User --|> Client
 ```
+
+## 역할분담
+
+- 박수아
+  - [ ] ICookingDevice
+  - [ ] IDeviceInfo
+  - [ ] IIoTDevice
+  - [ ] INetworkConnectable
+  - [ ] IVoiceControllable
+- 민정현
+  - [ ] User
+  - [ ] Admin
+  - [ ] Client
+- 배성훈
+  - [ ] Device
+  - [ ] MobileDevice
+  - [ ] HomeApplianceDevice
+  - [ ] KitchenDevice
