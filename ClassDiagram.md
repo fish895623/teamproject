@@ -149,7 +149,6 @@ classDiagram
 
     class IDeviceInfo {
         <<interface>>
-        +swim()
         +getSize()
         +printDeviceName()
     }
