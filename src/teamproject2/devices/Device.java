@@ -1,6 +1,6 @@
-package teamproject2;
+package teamproject2.devices;
 
-public class MobileDevice extends Device {
+public class Device {
 	public static void main(String[] args) {
 		System.out.println("Hello World");
 	}
