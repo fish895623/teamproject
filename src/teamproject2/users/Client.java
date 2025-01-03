@@ -1,7 +1,7 @@
 package teamproject2.users;
 
-public class Client extends User{
-	
+public class Client extends User {
+
 	private String customerType;
 	private String customerAdress;
 	private String purchaseList;
@@ -10,14 +10,13 @@ public class Client extends User{
 		super(userId, userPassword, userName, email);
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	public void viewDevice() {
-		
 	}
+
 	public void purchaseDevise() {
-		
 	}
-	
+
 	public String getCustomerType() {
 		return customerType;
 	}

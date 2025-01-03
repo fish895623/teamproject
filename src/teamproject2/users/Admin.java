@@ -10,11 +10,9 @@ public class Admin extends User {
 	}
 
 	public void manageDevice() {
-
 	}
 
 	public void manageUsers() {
-
 	}
 
 	public String getRole() {
