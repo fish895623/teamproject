@@ -1,4 +1,4 @@
-package teamproject2;
+package teamproject2.main;
 
 public class App {
 	/** @apiNote Entry point */
