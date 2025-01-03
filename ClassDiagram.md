@@ -20,11 +20,11 @@ Device --|> KitchenDevice
 
 class MobileDevice {
   +String software
-  +bool wearable
+  +boolean wearable
 
-  +bool network
-  +bool bluetooth
-  +bool wifi
+  +boolean network
+  +boolean bluetooth
+  +boolean wifi
 
   +connectToWifi(String network)
   +disconnectFromWifi()
@@ -36,8 +36,8 @@ class MobileDevice {
 }
 class HomeApplianceDevice {
   +String location
-  +bool iotDevice
-  +bool voiceDevice
+  +boolean iotDevice
+  +boolean voiceDevice
 
   +setLocation(String newLocation)
   +connectToIoT()
@@ -48,10 +48,10 @@ class HomeApplianceDevice {
   +cancelScheduledOperation()
 }
 class KitchenDevice {
-  +bool aboutFood
+  +boolean aboutFood
   +int cookingTime
-  +bool iotDevice
-  +bool voiceDevice
+  +boolean iotDevice
+  +boolean voiceDevice
 
   +setCookingTime(int time)
   +startCooking()
@@ -155,10 +155,10 @@ classDiagram
 
     class MobileDevice {
         +String software
-        +bool wearable
-        +bool network
-        +bool bluetooth
-        +bool wifi
+        +boolean wearable
+        +boolean network
+        +boolean bluetooth
+        +boolean wifi
         +connectToWifi(String network)
         +disconnectFromWifi()
         +toggleBluetooth()
@@ -174,7 +174,7 @@ classDiagram
     }
 
     class KitchenDevice {
-        +bool aboutFood
+        +boolean aboutFood
         +cleanDevice()
     }
 
