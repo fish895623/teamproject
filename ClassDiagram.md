@@ -1,0 +1,102 @@
+# Class Diagram
+
+```mermaid
+classDiagram
+class Device {
+  +int voltage
+  +int warranty
+  +String powerConsumption
+  +String carbonEmission
+  +float annualEnergyCost
+  +float weight
+  +float height
+  +float width
+  +float depth
+  +String size
+}
+Device --|> MobileDevice
+Device --|> HomeApplianceDevice
+Device --|> KitchenDevice
+
+class MobileDevice {
+  +String software
+  +bool wearable
+
+  +bool network
+  +bool bluetooth
+  +bool wifi
+
+  +connectToWifi(String network)
+  +disconnectFromWifi()
+  +toggleBluetooth()
+  +updateSoftware()
+  +checkBatteryLevel()
+  +enableNetworkConnection()
+  +disableNetworkConnection()
+}
+class HomeApplianceDevice {
+  +String location
+  +bool iotDevice
+  +bool voiceDevice
+
+  +setLocation(String newLocation)
+  +connectToIoT()
+  +disconnectFromIoT()
+  +enableVoiceControl()
+  +disableVoiceControl()
+  +scheduleOperation(DateTime time)
+  +cancelScheduledOperation()
+}
+class KitchenDevice {
+  +bool aboutFood
+  +int cookingTime
+  +bool iotDevice
+  +bool voiceDevice
+
+  +setCookingTime(int time)
+  +startCooking()
+  +stopCooking()
+  +cleanDevice()
+  +connectToIoT()
+  +disconnectFromIoT()
+  +enableVoiceControl()
+  +disableVoiceControl()
+}
+
+class `IDeviceInfo` {
+  <<Interface>>
+  +swim()
+  +getSize()
+  +printDeviceName()
+}
+
+`IDeviceInfo` --> MobileDevice
+`IDeviceInfo` --> HomeApplianceDevice
+`IDeviceInfo` --> KitchenDevice
+
+
+class User {
+  -String user_id
+  -String user_pw
+  -String name
+  -String email
+  -emailValidator()
+}
+
+class Admin {
+  -String role
+  +manageDevices()
+  +manageUsers()
+}
+
+class Client {
+  -String customerType
+  -String customerAddress
+  +viewDevices()
+  +purcharseDevice()
+}
+
+User --|> Admin
+User --|> Client
+
+```

@@ -37,43 +37,14 @@
 
 # 필수
 
-- 예외 처리
-- 제네릭
-- Thread
-  - Runnable
-- 다형성 (매개변수로)
-  - extends, implements
-- 익명 객체
-- Collections
-  - 해시맵
-
-```mermaid
-classDiagram
-class Device {
-    +int voltage
-    +int warranty
-    +String 소비전력
-    +String 이산화탄소 배출량
-    +년간 에너지 비용
-    +무게
-    +높이
-    +너비
-    +폭
-    +크기
-}
-class User {
-  -String user_id
-  -String user_pw
-}
-User --|> Admin
-class Admin
-
-User --|> Client
-class Client
-
-class `Interface Calculate` {
-    +swim()
-    +사이즈()
-    +디바이스이름 출력()
-}
-```
+- [ ] 예외 처리
+- [ ] 제네릭
+- [ ] Thread
+  - [ ] Runnable
+- [ ] 다형성
+  - [ ] 매개변수
+  - [x] extends
+  - [x] implements
+- [ ] 익명 객체
+- [ ] Collections
+  - [ ] 해시맵 ( auth )
