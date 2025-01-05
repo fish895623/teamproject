@@ -9,12 +9,15 @@ public class MobileDevice extends Device {
 	boolean wifi;
 
 	void connectToWifi(String network) {
+		System.out.println("Connected to " + network);
 	};
 
 	void disconnectFromWifi() {
+		System.out.println("Disconnected from wifi");
 	};
 
-	void toggleBluetooth() {
+	void connectToBluetooth(String device) {
+		System.out.println("Connected to " + device);
 	};
 
 	void updateSoftware() {
