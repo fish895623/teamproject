@@ -10,18 +10,6 @@ public class HomeApplianceDevice extends Device {
 	void setLocation(String newLocation) {
 	};
 
-	void connectToIoT() {
-	};
-
-	void disconnectFromIoT() {
-	};
-
-	void enableVoiceControl() {
-	};
-
-	void disableVoiceControl() {
-	};
-
 	void scheduleOperation(Date time) {
 	};
 

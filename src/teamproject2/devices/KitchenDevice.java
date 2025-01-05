@@ -6,18 +6,6 @@ public class KitchenDevice extends Device {
 	boolean iotDevice;
 	boolean voiceDevice;
 
-	void setCookingTime(int time) {
-		this.cookingTime = time;
-	};
-
-	void startCooking() {
-		System.out.println("Cooking started");
-	};
-
-	void stopCooking() {
-		System.out.println("Cooking stopped");
-	};
-
 	void cleanDevice() {
 		System.out.println("Device has been cleaned");
 	};
