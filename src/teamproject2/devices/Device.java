@@ -19,6 +19,7 @@ public class Device implements IDeviceInfo {
 
 	@Override
 	public void printDeviceName() {
-		System.out.println(this.getClass().getSimpleName());
+		// TODO: Auto-generated method stub
+		throw new UnsupportedOperationException(this.getClass().getSimpleName() + ".printDeviceName");
 	};
 }

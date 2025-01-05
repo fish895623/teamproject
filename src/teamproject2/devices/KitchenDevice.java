@@ -7,56 +7,53 @@ public class KitchenDevice extends Device implements IIoTDevice, IVoiceControlla
 	boolean voiceDevice;
 
 	void cleanDevice() {
-		System.out.println("Device has been cleaned");
+		// TODO: Auto-generated method stub
+		throw new UnsupportedOperationException(this.getClass().getSimpleName() + ".cleanDevice");
 	}
 
 	@Override
 	public void enableVoiceControl() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException(
-				this.getClass().getSimpleName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName());
+		// TODO: Auto-generated method stub
+		throw new UnsupportedOperationException(this.getClass().getSimpleName() + ".enableVoiceControl");
 	}
 
 	@Override
 	public void disableVoiceControl() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException(
-				this.getClass().getSimpleName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName());
+		// TODO: Auto-generated method stub
+		throw new UnsupportedOperationException(this.getClass().getSimpleName() + ".disableVoiceControl");
 	}
 
 	@Override
 	public void connectToIoT() {
 		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException(
-				this.getClass().getSimpleName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName());
+		throw new UnsupportedOperationException(this.getClass().getSimpleName() + ".connectToIoT");
 	}
 
 	@Override
 	public void disconnectFromIoT() {
 		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException(
-				this.getClass().getSimpleName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName());
+		throw new UnsupportedOperationException(this.getClass().getSimpleName() + ".disconnectFromIoT");
 	}
 
 	@Override
 	public void setCookingTime(int time) {
 		// TODO Auto-generated method stub
 		throw new UnsupportedOperationException(
-				this.getClass().getSimpleName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName());
+				this.getClass().getSimpleName() + ".setCookingTime");
 	}
 
 	@Override
 	public void startCooking() {
 		// TODO Auto-generated method stub
 		throw new UnsupportedOperationException(
-				this.getClass().getSimpleName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName());
+				this.getClass().getSimpleName() + ".startCooking");
 	}
 
 	@Override
 	public void stopCooking() {
 		// TODO Auto-generated method stub
 		throw new UnsupportedOperationException(
-				this.getClass().getSimpleName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName());
+				this.getClass().getSimpleName() + ".stopCooking");
 	};
 
 }
