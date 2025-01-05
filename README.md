@@ -47,5 +47,6 @@
   - [x] extends
   - [x] implements
 - [ ] 익명 객체
-- [ ] Collections
+- [x] Collections
   - [ ] 해시맵 ( auth )
+  - [x] HashSet ( auth )
