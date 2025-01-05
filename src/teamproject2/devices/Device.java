@@ -5,15 +5,11 @@ public class Device implements IDeviceInfo {
 	int warranty;
 	String carbonEmission;
 	float annualEnergyCost;
-	float weight;
-	float height;
-	float width;
-	float depth;
+	float weight, height, width, depth;
 	String size;
 
-	/** Calculate carbon emission */
-	float getCarbonEmission() {
-		return (float) (annualEnergyCost * 0.00062);
+	Device() {
+		this.carbonEmission = String.valueOf(annualEnergyCost * 0.00062);
 	}
 
 	@Override

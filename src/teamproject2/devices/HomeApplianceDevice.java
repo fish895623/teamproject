@@ -7,36 +7,60 @@ public class HomeApplianceDevice extends Device implements IIoTDevice, IVoiceCon
 	boolean iotDevice;
 	boolean voiceDevice;
 
+	HomeApplianceDevice() {
+		super();
+	}
+
+	HomeApplianceDevice(String location, boolean iotDevice, boolean voiceDevice) {
+		super();
+		this.location = location;
+		this.iotDevice = iotDevice;
+		this.voiceDevice = voiceDevice;
+	}
+
 	void setLocation(String newLocation) {
+		// TODO: Auto-generated method stub
+		throw new UnsupportedOperationException(
+				this.getClass().getSimpleName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName());
 	};
 
 	void scheduleOperation(Date time) {
+		// TODO: Auto-generated method stub
+		throw new UnsupportedOperationException(
+				this.getClass().getSimpleName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName());
 	};
 
 	void cancelScheduledOperation() {
+		// TODO: Auto-generated method stub
+		throw new UnsupportedOperationException(
+				this.getClass().getSimpleName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
 
 	@Override
 	public void enableVoiceControl() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'enableVoiceControl'");
+		// TODO: Auto-generated method stub
+		throw new UnsupportedOperationException(
+				this.getClass().getSimpleName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
 
 	@Override
 	public void disableVoiceControl() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'disableVoiceControl'");
+		// TODO: Auto-generated method stub
+		throw new UnsupportedOperationException(
+				this.getClass().getSimpleName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
 
 	@Override
 	public void connectToIoT() {
 		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'connectToIoT'");
+		throw new UnsupportedOperationException(
+				this.getClass().getSimpleName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
 
 	@Override
 	public void disconnectFromIoT() {
 		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'disconnectFromIoT'");
+		throw new UnsupportedOperationException(
+				this.getClass().getSimpleName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName());
 	};
 }

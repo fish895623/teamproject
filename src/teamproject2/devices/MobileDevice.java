@@ -9,38 +9,58 @@ public class MobileDevice extends Device implements INetworkConnectable {
 	boolean wifi;
 
 	void connectToWifi(String network) {
-		System.out.println("Connected to " + network);
+		// TODO: Auto-generated method stub
+		throw new UnsupportedOperationException(
+				this.getClass().getSimpleName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName());
 	};
 
 	void disconnectFromWifi() {
-		System.out.println("Disconnected from wifi");
+		// TODO: Auto-generated method stub
+		throw new UnsupportedOperationException(
+				this.getClass().getSimpleName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName());
 	};
 
 	void connectToBluetooth(String device) {
-		System.out.println("Connected to " + device);
+		// TODO: Auto-generated method stub
+		throw new UnsupportedOperationException(
+				this.getClass().getSimpleName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName());
 	};
 
 	void updateSoftware() {
+		// TODO: Auto-generated method stub
+		throw new UnsupportedOperationException(
+				this.getClass().getSimpleName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName());
 	};
 
 	void checkBatteryLevel() {
+		// TODO: Auto-generated method stub
+		throw new UnsupportedOperationException(
+				this.getClass().getSimpleName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName());
 	};
 
 	void enableNetworkConnection() {
+		// TODO: Auto-generated method stub
+		throw new UnsupportedOperationException(
+				this.getClass().getSimpleName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName());
 	};
 
 	void disableNetworkConnection() {
+		// TODO: Auto-generated method stub
+		throw new UnsupportedOperationException(
+				this.getClass().getSimpleName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
 
 	@Override
 	public void connectToNetwork() {
 		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'connectToNetwork'");
+		throw new UnsupportedOperationException(
+				this.getClass().getSimpleName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
 
 	@Override
 	public void disconnectFromNetwork() {
 		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'disconnectFromNetwork'");
+		throw new UnsupportedOperationException(
+				this.getClass().getSimpleName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName());
 	};
 }

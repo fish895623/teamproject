@@ -71,3 +71,4 @@ local.properties
 
 tags
 .DS_Store
+.vscode/
