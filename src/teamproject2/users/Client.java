@@ -40,5 +40,4 @@ public class Client extends User {
 	public void setPurchaseList(String purchaseList) {
 		this.purchaseList = purchaseList;
 	}
-
 }

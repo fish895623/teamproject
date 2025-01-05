@@ -1,7 +1,6 @@
 package teamproject2.users;
 
 public class Admin extends User {
-
 	private String role;
 
 	public Admin(String userId, String userPassword, String userName, String email) {
@@ -22,5 +21,4 @@ public class Admin extends User {
 	public void setRole(String role) {
 		this.role = role;
 	}
-
 }
