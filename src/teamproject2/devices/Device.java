@@ -1,9 +1,8 @@
 package teamproject2.devices;
 
 public class Device implements IDeviceInfo {
-	int voltage;
+	int powerConsumption; // kWh
 	int warranty;
-	String powerConsumption;
 	String carbonEmission;
 	float annualEnergyCost;
 	float weight;
@@ -12,24 +11,18 @@ public class Device implements IDeviceInfo {
 	float depth;
 	String size;
 
-	void turnOn() {
-	};
-
-	void turnOff() {
-	};
-
-	void checkWarranty() {
+	/** Calculate carbon emission */
+	float getCarbonEmission() {
+		return (float) (annualEnergyCost * 0.00062);
 	}
 
 	@Override
 	public void getSize() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'getSize'");
+		System.out.println("Size: " + size + " (WxHxD: " + width + "x" + height + "x" + depth + "cm)");
 	}
 
 	@Override
 	public void printDeviceName() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'printDeviceName'");
+		System.out.println(this.getClass().getSimpleName());
 	};
 }
