@@ -1,6 +1,6 @@
 package teamproject2.devices;
 
-public class KitchenDevice extends Device {
+public class KitchenDevice extends Device implements IIoTDevice, IVoiceControllable, ICookingDevice {
 	boolean aboutFood;
 	int cookingTime;
 	boolean iotDevice;
@@ -8,21 +8,48 @@ public class KitchenDevice extends Device {
 
 	void cleanDevice() {
 		System.out.println("Device has been cleaned");
+	}
+
+	@Override
+	public void enableVoiceControl() {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'enableVoiceControl'");
+	}
+
+	@Override
+	public void disableVoiceControl() {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'disableVoiceControl'");
+	}
+
+	@Override
+	public void connectToIoT() {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'connectToIoT'");
+	}
+
+	@Override
+	public void disconnectFromIoT() {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'disconnectFromIoT'");
+	}
+
+	@Override
+	public void setCookingTime(int time) {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'setCookingTime'");
+	}
+
+	@Override
+	public void startCooking() {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'startCooking'");
+	}
+
+	@Override
+	public void stopCooking() {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'stopCooking'");
 	};
 
-	void connectToIoT() {
-		System.out.println("Connected to IoT");
-	};
-
-	void disconnectFromIoT() {
-		System.out.println("Disconnected from IoT");
-	};
-
-	void enableVoiceControl() {
-		System.out.println("Voice control enabled");
-	};
-
-	void disableVoiceControl() {
-		System.out.println("Voice control disabled");
-	};
 }

@@ -1,6 +1,6 @@
 package teamproject2.devices;
 
-public class MobileDevice extends Device {
+public class MobileDevice extends Device implements INetworkConnectable {
 	String software;
 	boolean wearable;
 
@@ -30,5 +30,17 @@ public class MobileDevice extends Device {
 	};
 
 	void disableNetworkConnection() {
+	}
+
+	@Override
+	public void connectToNetwork() {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'connectToNetwork'");
+	}
+
+	@Override
+	public void disconnectFromNetwork() {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'disconnectFromNetwork'");
 	};
 }
