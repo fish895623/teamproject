@@ -108,13 +108,7 @@ public class Client extends User {
 		if (cart.isEmpty()) {
 			System.out.println("Your cart is empty. Add items to the cart first.");
 		} else {
-			for (Map<Device, Integer> cartItem : cart) {
-				for (Map.Entry<Device, Integer> entry : cartItem.entrySet()) {
-					Device item = entry.getKey();
-
-					System.out.println(item);
-				}
-			}
+			this.viewCart();
 			cart.clear();
 		}
 	}

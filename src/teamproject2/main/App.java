@@ -87,9 +87,9 @@ public class App {
 
 			} else {
 				// clear console for each commands
-				System.out.printf(
-						"(%s) Enter 'help' to get commands: ", app.getCurrentUser().getUserName());
+				System.out.printf("(%s) Enter 'help' to get commands: ", app.getCurrentUser().getUserName());
 				String command = scanner.nextLine();
+
 				if (command.equalsIgnoreCase("help")) {
 					StringBuffer sb = new StringBuffer();
 					sb.append("Available commands:\n");
@@ -146,6 +146,7 @@ public class App {
 
 	private void checkout() {
 		System.out.println("Checkout");
+		this.client.checkout();
 	}
 
 	private void viewCart() {
