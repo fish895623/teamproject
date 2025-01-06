@@ -1,6 +1,7 @@
 package teamproject2.users;
 
 import java.util.List;
+import java.util.Map;
 
 public class Client extends User {
 	// data members
@@ -8,6 +9,7 @@ public class Client extends User {
 	private String customerAdress;
 	private List<String> cart;
 	private List<String> purchaseList;
+	private Map<String, Double> itemPrices;
 	
 	// constructor
 	public Client(String userId, String userPassword, String userName, String email) {
@@ -38,7 +40,26 @@ public class Client extends User {
             System.out.println("Cart contents: " + String.join(", ", cart));
         }
     }
+	
+	public void TotalPriceInCart() {
+        if (cart.isEmpty()) {
+            System.out.println("Your cart is empty.");
+            return;
+        }
+        
+        double totalPrice = 0.0;
+        for (String item : cart) {
+            Double price = itemPrices.get(item);
+            if (price != null) {
+                totalPrice += price;
+            } else {
+                System.out.println("Price not found for item: " + item);
+            }
+        }
+        System.out.println("Total price of items in your cart: " + totalPrice + "₩");
+    }
 
+ 
 	public void checkout() {
         if (cart.isEmpty()) {
             System.out.println("Your cart is empty. Add items to the cart first.");
