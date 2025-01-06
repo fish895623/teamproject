@@ -11,7 +11,7 @@ public class Client extends User {
 	private String customerAdress;
 	private List<Map<Device, Integer>> cart;
 	private List<Map<Device, Integer>> purchaseList;
-	
+
 	// constructors
 	public Client(String userId, String userPassword, String userName, String email) {
 		super(userId, userPassword, userName, email, false);
@@ -143,7 +143,7 @@ public class Client extends User {
 	public void setPurchaseList(List<Map<Device, Integer>> purchaseList) {
 		this.purchaseList = purchaseList;
 	}
-	
+
 	public List<Map<Device, Integer>> getCart() {
 		return cart;
 	}
