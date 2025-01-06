@@ -17,15 +17,15 @@ public class User {
 	}
 
 	// method
-	//	// log-in
-	//    public void login() {
-	//        System.out.println(userName + " is logged in.");
-	//    }
+	// // log-in
+	// public void login() {
+	// System.out.println(userName + " is logged in.");
+	// }
 	//
-	//    // log-out
-	//    public void logout() {
-	//        System.out.println(userName + " is logged out.");
-	//    }
+	// // log-out
+	// public void logout() {
+	// System.out.println(userName + " is logged out.");
+	// }
 
 	// email validation
 	public void emailValidator(String email) throws InvalidEmailException {

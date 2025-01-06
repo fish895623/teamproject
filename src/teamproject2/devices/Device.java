@@ -65,6 +65,7 @@ public class Device implements IDeviceInfo {
 		}
 
 		public Builder<T> name(String nameString) {
+			// TODO: limit name length
 			this.nameString = nameString;
 			return this;
 		}
