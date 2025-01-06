@@ -9,8 +9,6 @@ public class UserManage {
 	// data members
 	private List<Map<String, User>> userList;
 
-
-
 	// constructor
 	public UserManage() {
 		this.userList = new ArrayList<>(); // initiate
