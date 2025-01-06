@@ -9,8 +9,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Run a one-line script
-        run: echo Hello from Octo Organization
+      - name: run eclint
+        run: npx eclint fix .
+
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "FORMAT!!!"
+
       - uses: actions/setup-java@v4
         with:
           distribution: "temurin" # See 'Supported distributions' for available options
