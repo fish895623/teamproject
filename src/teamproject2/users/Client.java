@@ -2,6 +2,7 @@ package teamproject2.users;
 
 import teamproject2.devices.Device;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -9,8 +10,8 @@ public class Client extends User {
 	// data members
 	private String customerType;
 	private String customerAdress;
-	private List<Map<Device, Integer>> cart;
-	private List<Map<Device, Integer>> purchaseList;
+	private List<Map<Device, Integer>> cart = new ArrayList<>();
+	private List<Map<Device, Integer>> purchaseList = new ArrayList<>();
 
 	// constructors
 	public Client(String userId, String userPassword, String userName, String email) {

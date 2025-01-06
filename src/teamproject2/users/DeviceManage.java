@@ -5,18 +5,18 @@ import teamproject2.devices.HomeApplianceDevice;
 import teamproject2.devices.KitchenDevice;
 import teamproject2.devices.MobileDevice;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 public class DeviceManage {
 	// data members
-	private List<Map<Device, Integer>> deviceStock;
+	private List<Map<Device, Integer>> deviceStock = new ArrayList<>();
 
 	// constructor
 	public DeviceManage() {
-		this.deviceStock = new java.util.ArrayList<>(); // initiate
 		// NOTE remove this when finish adding function
-		this.deviceStock.add(Map.of(Device.builder().name("Hello").build(), 1));
+		this.deviceStock.add(Map.of(Device.builder().name("Hello").price(1000).build(), 10));
 		this.deviceStock.add(
 				Map.of(
 						KitchenDevice.builder()
