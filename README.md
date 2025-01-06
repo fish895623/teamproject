@@ -1,4 +1,6 @@
-도메인:
+# 전자기기 상품 구매 관리
+
+# [Class Diagram](./ClassDiagram.md)
 
 ## 가전제품 쇼핑몰
 

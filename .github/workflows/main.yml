@@ -16,4 +16,11 @@ jobs:
           distribution: "temurin" # See 'Supported distributions' for available options
           java-version: "21"
       - name: Get Lists build
-        run: find . -name "*.java" -exec javac -d ./bin -sourcepath ./src {} \;
+        run: |
+          find . -name "*.java" -exec sh -c '
+          rc=0
+          for file: do
+            javac -d ./bin -sourcepath ./src "$file" || rc=$?
+          done
+          exit $rc
+          ' sh {} \;
