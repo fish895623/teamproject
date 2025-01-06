@@ -22,7 +22,7 @@ public class Device implements IDeviceInfo {
 		throw new UnsupportedOperationException(this.getClass().getSimpleName() + ".printDeviceName");
 	};
 
-	public static class Builder {
+	public static class Builder<T extends Device> {
 		private int powerConsumption;
 		private int warranty;
 		private float annualEnergyCost;
@@ -34,50 +34,50 @@ public class Device implements IDeviceInfo {
 		private String nameString;
 		private double priceNumber;
 
-		public Builder powerConsumption(int powerConsumption) {
+		public Builder<T> powerConsumption(int powerConsumption) {
 			this.powerConsumption = powerConsumption;
 			return this;
 		}
 
-		public Builder warranty(int warranty) {
+		public Builder<T> warranty(int warranty) {
 			this.warranty = warranty;
 			return this;
 		}
 
-		public Builder annualEnergyCost(float annualEnergyCost) {
+		public Builder<T> annualEnergyCost(float annualEnergyCost) {
 			this.annualEnergyCost = annualEnergyCost;
 			return this;
 		}
 
-		public Builder dimensions(float width, float height, float depth) {
+		public Builder<T> dimensions(float width, float height, float depth) {
 			this.width = width;
 			this.height = height;
 			this.depth = depth;
 			return this;
 		}
 
-		public Builder size(String size) {
+		public Builder<T> size(String size) {
 			this.size = size;
 			return this;
 		}
 
-		public Builder name(String nameString) {
+		public Builder<T> name(String nameString) {
 			this.nameString = nameString;
 			return this;
 		}
 
-		public Builder price(double priceNumber) {
+		public Builder<T> price(double priceNumber) {
 			this.priceNumber = priceNumber;
 			return this;
 		}
 
-		public Builder weight(float weight) {
+		public Builder<T> weight(float weight) {
 			this.weight = weight;
 			return this;
 		}
 
-		public Device build() {
-			var device = new Device();
+		public T build() {
+			T device = createDevice();
 			device.powerConsumption = this.powerConsumption;
 			device.warranty = this.warranty;
 			device.annualEnergyCost = this.annualEnergyCost;
@@ -91,8 +91,14 @@ public class Device implements IDeviceInfo {
 			device.carbonEmission = String.valueOf(device.annualEnergyCost * 0.00062);
 			return device;
 		}
+
+		@SuppressWarnings("unchecked")
+		protected T createDevice() {
+			return (T) new Device();
+		}
 	}
 
+	@SuppressWarnings("rawtypes")
 	public static Builder builder() {
 		return new Builder();
 	}

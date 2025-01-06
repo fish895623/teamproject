@@ -15,7 +15,8 @@ public class DeviceManage {
 		this.deviceStock = new java.util.ArrayList<>(); // initiate
 		// NOTE remove this when finish adding fucntion
 		this.deviceStock.add(Map.of(Device.builder().name("Hello").build(), 1));
-		this.deviceStock.add(Map.of(KitchenDevice.builder().name("water dispenser").build(), 2));
+		this.deviceStock.add(Map.of(
+				KitchenDevice.builder().dimensions(1, 2, 3).annualEnergyCost(0).name("water dispenser").build(), 2));
 		this.deviceStock.add(Map.of(KitchenDevice.builder().name("water dispenser2").build(), 1));
 	}
 
