@@ -4,19 +4,24 @@ import java.util.List;
 import java.util.Map;
 
 import teamproject2.devices.Device;
+import teamproject2.devices.KitchenDevice;
 
 public class DeviceManage {
 	// data members
-	private List<Map<Device, Integer>> dStock;
+	private List<Map<Device, Integer>> deviceStock;
 
 	// constructor
-	DeviceManage(){
-		this.dStock = new java.util.ArrayList<>(); // initiate
+	DeviceManage() {
+		this.deviceStock = new java.util.ArrayList<>(); // initiate
+		// NOTE remove this when finish adding fucntion
+		this.deviceStock.add(Map.of(Device.builder().name("Hello").build(), 1));
+		this.deviceStock.add(Map.of(KitchenDevice.builder().name("water dispenser").build(), 2));
+		this.deviceStock.add(Map.of(KitchenDevice.builder().name("water dispenser2").build(), 1));
 	}
 
 	// methods
-	public void dStockCheck(String nameString) {
-		for (Map<Device, Integer> stock : dStock) {
+	public void checkDeviceStock(String nameString) {
+		for (Map<Device, Integer> stock : deviceStock) {
 			for (Map.Entry<Device, Integer> entry : stock.entrySet()) {
 				Device device = entry.getKey();
 				Integer quantity = entry.getValue();
@@ -30,12 +35,12 @@ public class DeviceManage {
 	}
 
 	// getter and setter
-	public List<Map<Device, Integer>> getdStock() {
-		return dStock;
+	public List<Map<Device, Integer>> getDeviceStock() {
+		return deviceStock;
 	}
 
-	public void setdStock(List<Map<Device, Integer>> dStock) {
-		this.dStock = dStock;
+	public void setDeviceStock(List<Map<Device, Integer>> deviceStock) {
+		this.deviceStock = deviceStock;
 	}
 
 }
