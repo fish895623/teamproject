@@ -73,14 +73,19 @@ public class App {
 				System.out.print("Password: ");
 				String password = scanner.nextLine();
 
-				User authenticatedUser = app.authenticate(username, password);
-				if (authenticatedUser != null) {
-					System.out.println(
-							"Login successful! Welcome " + authenticatedUser.getUserName());
+				app.user = app.authenticate(username, password);
+				if (app.user != null) {
+					System.out.println("Login successful! Welcome " + app.user.getUserName());
 				} else {
 					System.out.println("Invalid username or password. Please try again.");
 				}
-			} else {
+
+                if (app.getCurrentUser().isAdmin()) {
+                    app.admin = (Admin)app.user;
+                } else {
+                    app.client = (Client)app.user;
+                }
+            } else {
 				// clear console for each commands
 				System.out.printf(
 						"(%s) Enter 'help' to get commands: ", app.getCurrentUser().getUserName());
