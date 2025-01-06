@@ -128,11 +128,10 @@ public class App {
 					}
 
 				} else if (command.equalsIgnoreCase("checkout")) {
-					// TODO checkout
 					if (!app.getCurrentUser().isAdmin()) {
+						System.out.println("Checkout!");
 						app.checkout();
 
-						System.out.println("Checking out...");
 					}
 
 				} else if (command.equalsIgnoreCase("exit")) {
