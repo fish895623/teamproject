@@ -46,43 +46,31 @@ public class DeviceManage {
 		}
 	}
 
-	// editNumDevice()에서 stock 0 되면 자동으로 checkDeviceStock()가 작동하게 해야하나??
-	public void editNumDevice(Client client) {
+	/** Change Quantity of Device in Stock */
+	public void editNumDevice(String deviceName, int quantityChanges) {
+		var tempList = new java.util.ArrayList<Map<Device, Integer>>();
+		for (Map<Device, Integer> stock : deviceStock) {
+			for (Map.Entry<Device, Integer> entry : stock.entrySet()) {
+				Device device = entry.getKey();
+				Integer quantity = entry.getValue();
 
-		for (Map<Device, Integer> cartItem : client.getCart()) {
-			for (Map.Entry<Device, Integer> entry : cartItem.entrySet()) {
-				Device deviceInCart = entry.getKey();
-				int quantityInCart = entry.getValue();
-
-				// Iterate through the deviceStock to find and update the stock
-				for (Map<Device, Integer> stock : deviceStock) {
-					for (Map.Entry<Device, Integer> stockEntry : stock.entrySet()) {
-						Device deviceInStock = stockEntry.getKey();
-						int currentStock = stockEntry.getValue();
-
-						// Check if the device in the cart matches the device in the stock
-						if (deviceInCart.equals(deviceInStock)) {
-							if (currentStock >= quantityInCart) {
-								// Update stock
-								stock.put(deviceInStock, currentStock - quantityInCart);
-								System.out.println(
-										quantityInCart
-												+ " "
-												+ deviceInCart.nameString
-												+ "(s) were removed from stock.");
-							} else {
-								System.out.println(
-										"Not enough stock for "
-												+ deviceInCart.nameString
-												+ ". Only "
-												+ currentStock
-												+ " left.");
-							}
-						}
+				if (device.nameString.equals(deviceName)) {
+					Map<Device, Integer> newMap = Map.of(device, quantity + quantityChanges);
+					
+					if (quantity + quantityChanges < 0) {
+						System.out.println("Invalid quantity change. Please try again.");
+						return;
 					}
+
+					stock.put(device, quantity + quantityChanges);
+					tempList.add(newMap);
+				} else {
+					tempList.add(stock);
 				}
 			}
 		}
+
+		this.deviceStock = tempList;
 	}
 
 	// getter and setter
