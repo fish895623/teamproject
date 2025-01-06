@@ -121,11 +121,10 @@ public class App {
 					}
 
 				} else if (command.equalsIgnoreCase("view")) {
-					// TODO view cart
 					if (!app.getCurrentUser().isAdmin()) {
-						app.viewCart();
-
 						System.out.println("Viewing cart...");
+
+						app.viewCart();
 					}
 
 				} else if (command.equalsIgnoreCase("checkout")) {
@@ -150,8 +149,8 @@ public class App {
 		System.out.println("Checkout");
 	}
 
-	private void viewCart() {
-		System.out.println("View Items");
+	private void viewCart()  {
+		this.client.viewCart();
 	}
 
 	/**
