@@ -51,7 +51,7 @@ public class Client extends User {
 
 	public void addToCart(Device item, int quantity) {
 		cart.add(Map.of(item, quantity));
-		System.out.println(item + " added to cart.");
+		System.out.println(item.nameString + " x " + quantity + " added to cart.");
 	}
 
 	public void viewCart() {
