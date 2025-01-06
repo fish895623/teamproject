@@ -76,15 +76,15 @@ public class App {
 				app.user = app.authenticate(username, password);
 				if (app.user != null) {
 					System.out.println("Login successful! Welcome " + app.user.getUserName());
+                	if (app.getCurrentUser().isAdmin()) {
+                	    app.admin = (Admin)app.user;
+                	} else {
+                	    app.client = (Client)app.user;
+                	}
 				} else {
 					System.out.println("Invalid username or password. Please try again.");
 				}
 
-                if (app.getCurrentUser().isAdmin()) {
-                    app.admin = (Admin)app.user;
-                } else {
-                    app.client = (Client)app.user;
-                }
             } else {
 				// clear console for each commands
 				System.out.printf(
