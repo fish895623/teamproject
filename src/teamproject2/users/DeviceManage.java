@@ -46,9 +46,9 @@ public class DeviceManage {
 		}
 	}
 	
-	//
+	// editNumDevice()에서 stock 0 되면 자동으로 checkDeviceStock()가 작동하게 해야하나??
 	public void editNumDevice(Client client) {
-	    // Iterate through the cart to update stock based on items in the cart
+		
 	    for (Map<Device, Integer> cartItem : client.getCart()) {
 	        for (Map.Entry<Device, Integer> entry : cartItem.entrySet()) {
 	            Device deviceInCart = entry.getKey();
@@ -63,7 +63,7 @@ public class DeviceManage {
 	                    // Check if the device in the cart matches the device in the stock
 	                    if (deviceInCart.equals(deviceInStock)) {
 	                        if (currentStock >= quantityInCart) {
-	                            // Update stock: subtract the quantity added to the cart
+	                            // Update stock
 	                            stock.put(deviceInStock, currentStock - quantityInCart);
 	                            System.out.println(quantityInCart + " " + deviceInCart.nameString + "(s) were removed from stock.");
 	                        } else {
