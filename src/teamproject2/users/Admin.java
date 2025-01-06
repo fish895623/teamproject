@@ -1,19 +1,24 @@
 package teamproject2.users;
 
 public class Admin extends User {
+	// field
 	private String role;
 
+	// constructor
 	public Admin(String userId, String userPassword, String userName, String email) {
 		super(userId, userPassword, userName, email);
-		// TODO Auto-generated constructor stub
+		
 	}
-
+	
+	// method
 	public void manageDevice() {
 	}
 
-	public void manageUsers() {
+	public void manageUser() {
 	}
 
+
+	// getter and setter
 	public String getRole() {
 		return role;
 	}

@@ -1,22 +1,64 @@
 package teamproject2.users;
 
-public class Client extends User {
+import java.util.List;
 
+public class Client extends User {
+	// data members
 	private String customerType;
 	private String customerAdress;
-	private String purchaseList;
-
+	private List<String> cart;
+	private List<String> purchaseList;
+	
+	// constructor
 	public Client(String userId, String userPassword, String userName, String email) {
 		super(userId, userPassword, userName, email);
-		// TODO Auto-generated constructor stub
+	}
+	
+	public Client(String userId, String userPassword, String userName, String email, String customerType,
+			String customerAdress, List<String> purchaseList) {
+		super(userId, userPassword, userName, email);
+		this.customerType = customerType;
+		this.customerAdress = customerAdress;
+		this.purchaseList = purchaseList;
 	}
 
+	// methods
 	public void viewDevice() {
 	}
+	
+	public void addToCart(String item) {
+        cart.add(item);
+        System.out.println(item + " added to cart.");
+    }
+	
+	public void viewCart() {
+        if (cart.isEmpty()) {
+            System.out.println("Your cart is empty.");
+        } else {
+            System.out.println("Cart contents: " + String.join(", ", cart));
+        }
+    }
 
-	public void purchaseDevise() {
+	public void checkout() {
+        if (cart.isEmpty()) {
+            System.out.println("Your cart is empty. Add items to the cart first.");
+        } else {
+            System.out.println("Proceeding to checkout with items: " + String.join(", ", cart));
+            cart.clear(); 
+        }
+	}
+	
+	public void viewPurchaseList() {
+		if (purchaseList.isEmpty()) {
+            System.out.println("Your purchase list is empty.");
+        } else {
+            System.out.println("Your purchase history: " + String.join(", ", purchaseList)); 
+        }
 	}
 
+
+
+	// getters and setters
 	public String getCustomerType() {
 		return customerType;
 	}
@@ -33,11 +75,11 @@ public class Client extends User {
 		this.customerAdress = customerAdress;
 	}
 
-	public String getPurchaseList() {
+	public List<String> getPurchaseList() {
 		return purchaseList;
 	}
 
-	public void setPurchaseList(String purchaseList) {
+	public void setPurchaseList(List<String> purchaseList) {
 		this.purchaseList = purchaseList;
 	}
 }
