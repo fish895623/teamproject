@@ -111,7 +111,7 @@ public class App {
 						System.out.print("Enter quantity: ");
 						int quantity = scanner.nextInt();
 						
-						var result = app.deviceManage.editNumDevice(deviceName, quantity);
+						var result = app.deviceManage.editNumDevice(deviceName.trim(), -quantity);
 						if (result.success()) {
 							app.client.addToCart(result.device(), quantity);
 							System.out.println("Device added to cart successfully!");
