@@ -7,10 +7,10 @@ public class Admin extends User {
 	// constructor
 	public Admin(String userId, String userPassword, String userName, String email) {
 		super(userId, userPassword, userName, email);
-		
+
 	}
-	
-	// method	
+
+	// method
 	public void manageDevice() {
 		if(role== 0) {
 			System.out.println("Device manager approved.");
@@ -23,7 +23,7 @@ public class Admin extends User {
 		if(role== 1) {
 			System.out.println("User manager approved.");
 		}else {
-			System.out.println("You can not access to this job.");			
+			System.out.println("You can not access to this job.");
 		}
 	}
 

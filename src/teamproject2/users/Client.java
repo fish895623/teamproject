@@ -11,12 +11,12 @@ public class Client extends User {
 	private String customerAdress;
 	private List<Map<Device, Integer>> cart;
 	// private List<Map<Device, Integer>> purchaseList;
-	
+
 	// constructor
 	public Client(String userId, String userPassword, String userName, String email) {
 		super(userId, userPassword, userName, email);
 	}
-	
+
 	public Client(String userId, String userPassword, String userName, String email, String customerType,
 			String customerAdress
 	// List<String> purchaseList
@@ -30,16 +30,16 @@ public class Client extends User {
 	// methods
 	public void viewDevice() {
 	}
-	
+
 	public void addToCart(Device item, int quantity) {
 		cart.add(Map.of(item, quantity));
-        System.out.println(item + " added to cart.");
-    }
-	
+		System.out.println(item + " added to cart.");
+	}
+
 	public void viewCart() {
-        if (cart.isEmpty()) {
-            System.out.println("Your cart is empty.");
-        } else {
+		if (cart.isEmpty()) {
+			System.out.println("Your cart is empty.");
+		} else {
 			System.out.println("Cart Items");
 			for (Map<Device, Integer> cartItem : cart) {
 				for (Map.Entry<Device, Integer> entry : cartItem.entrySet()) {
@@ -50,33 +50,33 @@ public class Client extends User {
 				}
 			}
 			System.out.println("Total items in your cart: " + cart.size());
-        }
-    }
-	
+		}
+	}
+
 	public void totalPriceInCart() {
-        if (cart.isEmpty()) {
-            System.out.println("Your cart is empty.");
-            return;
-        }
-        
-        double totalPrice = 0.0;
+		if (cart.isEmpty()) {
+			System.out.println("Your cart is empty.");
+			return;
+		}
+
+		double totalPrice = 0.0;
 		for (Map<Device, Integer> cartItem : cart) {
 			for (Map.Entry<Device, Integer> entry : cartItem.entrySet()) {
 				Device item = entry.getKey();
 				int quantity = entry.getValue();
 
 				totalPrice += item.priceNumber * quantity;
-            }
-        }
+			}
+		}
 
-        System.out.println("Total price of items in your cart: " + totalPrice + "₩");
-    }
- 
+		System.out.println("Total price of items in your cart: " + totalPrice + "₩");
+	}
+
 	/** Purchase complete */
 	public void checkout() {
-        if (cart.isEmpty()) {
-            System.out.println("Your cart is empty. Add items to the cart first.");
-        } else {
+		if (cart.isEmpty()) {
+			System.out.println("Your cart is empty. Add items to the cart first.");
+		} else {
 			for (Map<Device, Integer> cartItem : cart) {
 				for (Map.Entry<Device, Integer> entry : cartItem.entrySet()) {
 					Device item = entry.getKey();
@@ -84,10 +84,10 @@ public class Client extends User {
 					System.out.println(item);
 				}
 			}
-            cart.clear(); 
-        }
+			cart.clear();
+		}
 	}
-	
+
 	// TODO Work This later
 	// public void viewPurchaseList() {
 	// if (purchaseList.isEmpty()) {

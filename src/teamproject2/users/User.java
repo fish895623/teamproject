@@ -14,7 +14,7 @@ public class User {
 		this.userName = userName;
 		this.email = email;
 	}
-	
+
 	// method
 //	// log-in
 //    public void login() {
@@ -25,26 +25,26 @@ public class User {
 //    public void logout() {
 //        System.out.println(userName + " is logged out.");
 //    }
-    
-    // email validation
-    public void emailValidator(String email) throws InvalidEmailException {
-        // null check and empty check
-        if (email == null || email.trim().isEmpty()) {
-            throw new InvalidEmailException("Email cannot be null or empty.");
-        }
 
-        // regular expression
-        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+	// email validation
+	public void emailValidator(String email) throws InvalidEmailException {
+		// null check and empty check
+		if (email == null || email.trim().isEmpty()) {
+			throw new InvalidEmailException("Email cannot be null or empty.");
+		}
 
-        // email validation
-        if (email.matches(emailRegex)) {
-            System.out.println("Email is valid.");
-        } else {
-            throw new InvalidEmailException("Invalid email format.");
-        }
-    }
+		// regular expression
+		String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
 
-	
+		// email validation
+		if (email.matches(emailRegex)) {
+			System.out.println("Email is valid.");
+		} else {
+			throw new InvalidEmailException("Invalid email format.");
+		}
+	}
+
+
 	// getters and setters
 	public String getUserId() {
 		return userId;
