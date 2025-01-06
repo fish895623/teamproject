@@ -111,9 +111,17 @@ public class App {
 					System.out.println("Device added to cart.");
 				} else if (command.equalsIgnoreCase("view")) {
 					// TODO view cart
+					if (!app.isAdmin()) {
+						app.viewCart();
+					}
+
 					System.out.println("Viewing cart...");
 				} else if (command.equalsIgnoreCase("checkout")) {
 					// TODO checkout
+					if (!app.isAdmin()) {
+						app.checkout();
+					}
+
 					System.out.println("Checking out...");
 				} else if (command.equalsIgnoreCase("exit")) {
 					break;
@@ -128,6 +136,16 @@ public class App {
 		scanner.close();
 	}
 
+	private void checkout() {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'checkout'");
+	}
+
+	private void viewCart() {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'viewCart'");
+	}
+
 	/**
 	* Device list available in device stock
 	*
@@ -135,8 +153,7 @@ public class App {
 	*/
 	private void addUserSelectDevice() throws InterruptedException {
 		// display all devices in stock using thread
-		var thread =
-				new Thread(
+		var thread = new Thread(
 						() -> {
 							DeviceManage deviceManage = new DeviceManage();
 							var a = deviceManage.getDeviceStock();
