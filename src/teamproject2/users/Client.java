@@ -3,13 +3,14 @@ package teamproject2.users;
 import java.util.List;
 import java.util.Map;
 
+import teamproject2.devices.Device;
+
 public class Client extends User {
 	// data members
 	private String customerType;
 	private String customerAdress;
-	private List<String> cart;
-	private List<String> purchaseList;
-	private Map<String, Double> itemPrices;
+	private List<Map<Device, Integer>> cart;
+	// private List<Map<Device, Integer>> purchaseList;
 	
 	// constructor
 	public Client(String userId, String userPassword, String userName, String email) {
@@ -17,19 +18,21 @@ public class Client extends User {
 	}
 	
 	public Client(String userId, String userPassword, String userName, String email, String customerType,
-			String customerAdress, List<String> purchaseList) {
+			String customerAdress
+	// List<String> purchaseList
+	) {
 		super(userId, userPassword, userName, email);
 		this.customerType = customerType;
 		this.customerAdress = customerAdress;
-		this.purchaseList = purchaseList;
+		// this.purchaseList = purchaseList;
 	}
 
 	// methods
 	public void viewDevice() {
 	}
 	
-	public void addToCart(String item) {
-        cart.add(item);
+	public void addToCart(Device item, int quantity) {
+		cart.add(Map.of(item, quantity));
         System.out.println(item + " added to cart.");
     }
 	
@@ -38,50 +41,62 @@ public class Client extends User {
             System.out.println("Your cart is empty.");
         } else {
 			System.out.println("Cart Items");
-			for (String item : cart) {
-				System.out.println(item);
+			for (Map<Device, Integer> cartItem : cart) {
+				for (Map.Entry<Device, Integer> entry : cartItem.entrySet()) {
+					Device item = entry.getKey();
+					int quantity = entry.getValue();
+
+					System.out.println(item + " x " + quantity + " " + (item.priceNumber * quantity));
+				}
 			}
 			System.out.println("Total items in your cart: " + cart.size());
         }
     }
 	
-	public void TotalPriceInCart() {
+	public void totalPriceInCart() {
         if (cart.isEmpty()) {
             System.out.println("Your cart is empty.");
             return;
         }
         
         double totalPrice = 0.0;
-        for (String item : cart) {
-            Double price = itemPrices.get(item);
-            if (price != null) {
-                totalPrice += price;
-            } else {
-                System.out.println("Price not found for item: " + item);
+		for (Map<Device, Integer> cartItem : cart) {
+			for (Map.Entry<Device, Integer> entry : cartItem.entrySet()) {
+				Device item = entry.getKey();
+				int quantity = entry.getValue();
+
+				totalPrice += item.priceNumber * quantity;
             }
         }
+
         System.out.println("Total price of items in your cart: " + totalPrice + "₩");
     }
-
  
+	/** Purchase complete */
 	public void checkout() {
         if (cart.isEmpty()) {
             System.out.println("Your cart is empty. Add items to the cart first.");
         } else {
-            System.out.println("Proceeding to checkout with items: " + String.join(", ", cart));
+			for (Map<Device, Integer> cartItem : cart) {
+				for (Map.Entry<Device, Integer> entry : cartItem.entrySet()) {
+					Device item = entry.getKey();
+
+					System.out.println(item);
+				}
+			}
             cart.clear(); 
         }
 	}
 	
-	public void viewPurchaseList() {
-		if (purchaseList.isEmpty()) {
-            System.out.println("Your purchase list is empty.");
-        } else {
-            System.out.println("Your purchase history: " + String.join(", ", purchaseList)); 
-        }
-	}
-
-
+	// TODO Work This later
+	// public void viewPurchaseList() {
+	// if (purchaseList.isEmpty()) {
+	// System.out.println("Your purchase list is empty.");
+	// } else {
+	// System.out.println("Your purchase history: " + String.join(", ",
+	// purchaseList));
+	// }
+	// }
 
 	// getters and setters
 	public String getCustomerType() {
@@ -100,11 +115,11 @@ public class Client extends User {
 		this.customerAdress = customerAdress;
 	}
 
-	public List<String> getPurchaseList() {
-		return purchaseList;
-	}
-
-	public void setPurchaseList(List<String> purchaseList) {
-		this.purchaseList = purchaseList;
-	}
+	// public List<String> getPurchaseList() {
+	// return purchaseList;
+	// }
+	//
+	// public void setPurchaseList(List<String> purchaseList) {
+	// this.purchaseList = purchaseList;
+	// }
 }

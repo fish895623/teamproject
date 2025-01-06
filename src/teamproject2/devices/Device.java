@@ -9,7 +9,7 @@ public class Device implements IDeviceInfo {
 	String size;
 
 	String nameString;
-	double priceNumber;
+	public double priceNumber;
 
 	Device() {
 		this.carbonEmission = String.valueOf(annualEnergyCost * 0.00062);
