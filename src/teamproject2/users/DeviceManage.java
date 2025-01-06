@@ -67,7 +67,8 @@ public class DeviceManage {
 						return new DeviceEditResult(false, returningDevice);
 					}
 
-					stock.put(device, quantity + quantityChanges);
+					returningDevice = device;
+					
 					tempList.add(newMap);
 				} else {
 					tempList.add(stock);
@@ -76,6 +77,8 @@ public class DeviceManage {
 		}
 
 		this.deviceStock = tempList;
+		
+		System.out.println("Device quantity for " + returningDevice.nameString + " was changed to ");
 		
 		return new DeviceEditResult(true, returningDevice);
 	}
