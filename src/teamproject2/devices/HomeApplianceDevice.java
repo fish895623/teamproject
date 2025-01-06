@@ -47,13 +47,13 @@ public class HomeApplianceDevice extends Device implements IIoTDevice, IVoiceCon
 	};
 
 	public static class Builder extends Device.Builder<HomeApplianceDevice> {
-		private String nameString;
+		private String location;
 		private boolean iotDevice;
 		private boolean voiceDevice;
 
 		public HomeApplianceDevice build() {
 			var device = super.build();
-			device.nameString = this.nameString;
+			device.location = this.location;
 			device.iotDevice = this.iotDevice;
 			device.voiceDevice = this.voiceDevice;
 			return device;
