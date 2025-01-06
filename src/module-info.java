@@ -1,2 +1,1 @@
-module teamproject2 {
-}
+module teamproject2 {}
