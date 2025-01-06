@@ -37,7 +37,11 @@ public class Client extends User {
         if (cart.isEmpty()) {
             System.out.println("Your cart is empty.");
         } else {
-            System.out.println("Cart contents: " + String.join(", ", cart));
+			System.out.println("Cart Items");
+			for (String item : cart) {
+				System.out.println(item);
+			}
+			System.out.println("Total items in your cart: " + cart.size());
         }
     }
 	
