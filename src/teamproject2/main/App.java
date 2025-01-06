@@ -62,6 +62,7 @@ public class App {
 	public static void main(String[] args) throws InterruptedException {
 		Scanner scanner = new Scanner(System.in);
 		App app = new App();
+		app.addUserSelectDevice();
 
 		System.out.println("Welcome to the system!");
 
@@ -102,7 +103,9 @@ public class App {
 					System.out.println("Logged out successfully!");
 				} else if (command.equalsIgnoreCase("add")) {
 					// TODO add device to cart
-					app.addMenu();
+					if (!app.isAdmin()) {
+						app.addUserSelectDevice();
+					}
 
 					System.out.println("Device added to cart.");
 				} else if (command.equalsIgnoreCase("view")) {
@@ -124,20 +127,23 @@ public class App {
 		scanner.close();
 	}
 
+
 	/**
 	* Device list available in device stock
 	*
 	* @throws InterruptedException
 	*/
-	private void addMenu() throws InterruptedException {
+	private void addUserSelectDevice() throws InterruptedException {
 		// display all devices in stock using thread
 		var thread =
 				new Thread(
 						() -> {
 							DeviceManage deviceManage = new DeviceManage();
 							var a = deviceManage.getDeviceStock();
-							System.out.printf("| %-20s | %8s | %15s |\n", "Device Name", "Quantity", "Price");
-							System.out.printf("| -------------------- | -------- | --------------- |\n");
+							System.out.printf(
+									"| %-20s | %8s | %15s |\n", "Device Name", "Quantity", "Price");
+							System.out.printf(
+									"| -------------------- | -------- | --------------- |\n");
 							for (Map<Device, Integer> stock : a) {
 								for (Map.Entry<Device, Integer> entry : stock.entrySet()) {
 									Device device = entry.getKey();
