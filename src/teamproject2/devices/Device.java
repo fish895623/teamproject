@@ -8,6 +8,9 @@ public class Device implements IDeviceInfo {
 	float weight, height, width, depth;
 	String size;
 
+	String nameString;
+	double priceNumber;
+
 	Device() {
 		this.carbonEmission = String.valueOf(annualEnergyCost * 0.00062);
 	}
