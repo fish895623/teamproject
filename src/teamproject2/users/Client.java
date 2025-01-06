@@ -16,14 +16,14 @@ public class Client extends User {
 	public Client(String userId, String userPassword, String userName, String email) {
 		 super(userId, userPassword, userName, email);
 	 }
-	
+
 	// adding customerType & customerAdress
 	public Client(String userId, String userPassword, String userName, String email, String customerType, String customerAdress) {
 		super(userId, userPassword, userName, email);
 		this.customerType = customerType;
 		this.customerAdress = customerAdress;
 	}
-	
+
 	// adding purchaseList
 	public Client(String userId, String userPassword, String userName, String email, String customerType,
 			String customerAdress, List<Map<Device, Integer>> purchaseList) {
@@ -99,7 +99,7 @@ public class Client extends User {
 		 if (purchaseList.isEmpty()) {
 	        System.out.println("Your purchase list is empty.");
 	        } else {
-	        System.out.println("Your purchase history:");	        
+	        System.out.println("Your purchase history:");
 	        // Print each item in the purchase list
 	        for (Map<Device, Integer> purchase : purchaseList) {
 	            System.out.println(purchase);
@@ -127,7 +127,7 @@ public class Client extends User {
 	 public List<Map<Device, Integer>> getPurchaseList() {
 	 return purchaseList;
 	 }
-	
+
 	 public void setPurchaseList(List<Map<Device, Integer>> purchaseList) {
 	 this.purchaseList = purchaseList;
 	 }
