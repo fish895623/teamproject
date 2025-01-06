@@ -7,11 +7,7 @@ public class HomeApplianceDevice extends Device implements IIoTDevice, IVoiceCon
 	boolean iotDevice;
 	boolean voiceDevice;
 
-	HomeApplianceDevice() {
-		super();
-	}
-
-	HomeApplianceDevice(String location, boolean iotDevice, boolean voiceDevice) {
+	public HomeApplianceDevice(String location, boolean iotDevice, boolean voiceDevice) {
 		super();
 		this.location = location;
 		this.iotDevice = iotDevice;
