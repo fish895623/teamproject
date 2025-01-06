@@ -79,6 +79,8 @@ public class App {
 					sb.append("Available commands:\n");
 					sb.append("logout\n");
 					sb.append("add\n");
+					sb.append("view\n");
+					sb.append("checkout\n");
 					sb.append("exit\n");
 					System.out.println(sb.toString());
 				} else if (command.equalsIgnoreCase("logout")) {
@@ -87,6 +89,12 @@ public class App {
 				} else if (command.equalsIgnoreCase("add")) {
 					// TODO add device to cart
 					System.out.println("Device added to cart.");
+				} else if (command.equalsIgnoreCase("view")) {
+					// TODO view cart
+					System.out.println("Viewing cart...");
+				} else if (command.equalsIgnoreCase("checkout")) {
+					// TODO checkout
+					System.out.println("Checking out...");
 				} else if (command.equalsIgnoreCase("exit")) {
 					break;
 				} else {
