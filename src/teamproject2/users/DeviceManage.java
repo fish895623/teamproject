@@ -15,7 +15,7 @@ public class DeviceManage {
 	// constructor
 	public DeviceManage() {
 		this.deviceStock = new java.util.ArrayList<>(); // initiate
-		// NOTE remove this when finish adding fucntion
+		// NOTE remove this when finish adding function
 		this.deviceStock.add(Map.of(Device.builder().name("Hello").build(), 1));
 		this.deviceStock.add(
 				Map.of(
@@ -45,6 +45,37 @@ public class DeviceManage {
 			}
 		}
 	}
+	
+	//
+	public void editNumDevice(Client client) {
+	    // Iterate through the cart to update stock based on items in the cart
+	    for (Map<Device, Integer> cartItem : client.getCart()) {
+	        for (Map.Entry<Device, Integer> entry : cartItem.entrySet()) {
+	            Device deviceInCart = entry.getKey();
+	            int quantityInCart = entry.getValue();
+
+	            // Iterate through the deviceStock to find and update the stock
+	            for (Map<Device, Integer> stock : deviceStock) {
+	                for (Map.Entry<Device, Integer> stockEntry : stock.entrySet()) {
+	                    Device deviceInStock = stockEntry.getKey();
+	                    int currentStock = stockEntry.getValue();
+
+	                    // Check if the device in the cart matches the device in the stock
+	                    if (deviceInCart.equals(deviceInStock)) {
+	                        if (currentStock >= quantityInCart) {
+	                            // Update stock: subtract the quantity added to the cart
+	                            stock.put(deviceInStock, currentStock - quantityInCart);
+	                            System.out.println(quantityInCart + " " + deviceInCart.nameString + "(s) were removed from stock.");
+	                        } else {
+	                            System.out.println("Not enough stock for " + deviceInCart.nameString + ". Only " + currentStock + " left.");
+	                        }
+	                    }
+	                }
+	            }
+	        }
+	    }
+	}
+
 
 	// getter and setter
 	public List<Map<Device, Integer>> getDeviceStock() {
