@@ -110,6 +110,14 @@ public class App {
 						String deviceName = scanner.nextLine();
 						System.out.print("Enter quantity: ");
 						int quantity = scanner.nextInt();
+						
+						var result = app.deviceManage.editNumDevice(deviceName, quantity);
+						if (result.success()) {
+							app.client.addToCart(result.device(), quantity);
+							System.out.println("Device added to cart successfully!");
+						} else {
+							System.out.println("Failed to add device to cart.");
+						}
 					}
 
 				} else if (command.equalsIgnoreCase("view")) {

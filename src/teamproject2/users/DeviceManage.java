@@ -47,19 +47,24 @@ public class DeviceManage {
 	}
 
 	/** Change Quantity of Device in Stock */
-	public void editNumDevice(String deviceName, int quantityChanges) {
+	public record DeviceEditResult(boolean success, Device device) {}
+
+	public DeviceEditResult editNumDevice(String deviceName, int quantityChanges) {
 		var tempList = new java.util.ArrayList<Map<Device, Integer>>();
+		var returningDevice = new Device();
 		for (Map<Device, Integer> stock : deviceStock) {
 			for (Map.Entry<Device, Integer> entry : stock.entrySet()) {
 				Device device = entry.getKey();
 				Integer quantity = entry.getValue();
 
-				if (device.nameString.equals(deviceName)) {
+				var result = device.nameString.equals(deviceName);
+
+				if (result) {
 					Map<Device, Integer> newMap = Map.of(device, quantity + quantityChanges);
 
 					if (quantity + quantityChanges < 0) {
 						System.out.println("Invalid quantity change. Please try again.");
-						return;
+						return new DeviceEditResult(false, returningDevice);
 					}
 
 					stock.put(device, quantity + quantityChanges);
@@ -71,6 +76,8 @@ public class DeviceManage {
 		}
 
 		this.deviceStock = tempList;
+		
+		return new DeviceEditResult(true, returningDevice);
 	}
 
 	// getter and setter
