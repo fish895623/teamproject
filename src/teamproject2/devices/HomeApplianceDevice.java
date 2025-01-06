@@ -7,13 +7,6 @@ public class HomeApplianceDevice extends Device implements IIoTDevice, IVoiceCon
 	boolean iotDevice;
 	boolean voiceDevice;
 
-	public HomeApplianceDevice(String location, boolean iotDevice, boolean voiceDevice) {
-		super();
-		this.location = location;
-		this.iotDevice = iotDevice;
-		this.voiceDevice = voiceDevice;
-	}
-
 	void setLocation(String newLocation) {
 		// TODO: Auto-generated method stub
 		throw new UnsupportedOperationException(this.getClass().getSimpleName() + ".setLocation");
@@ -52,4 +45,22 @@ public class HomeApplianceDevice extends Device implements IIoTDevice, IVoiceCon
 		// TODO Auto-generated method stub
 		throw new UnsupportedOperationException(this.getClass().getSimpleName() + ".disconnectFromIoT");
 	};
+
+	public static class Builder extends Device.Builder<HomeApplianceDevice> {
+		private String nameString;
+		private boolean iotDevice;
+		private boolean voiceDevice;
+
+		public HomeApplianceDevice build() {
+			var device = super.build();
+			device.nameString = this.nameString;
+			device.iotDevice = this.iotDevice;
+			device.voiceDevice = this.voiceDevice;
+			return device;
+		}
+
+		protected HomeApplianceDevice createDevice() {
+			return (HomeApplianceDevice) new HomeApplianceDevice();
+		}
+	}
 }

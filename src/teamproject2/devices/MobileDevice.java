@@ -55,4 +55,25 @@ public class MobileDevice extends Device implements INetworkConnectable {
 		// TODO Auto-generated method stub
 		throw new UnsupportedOperationException(this.getClass().getSimpleName() + ".disconnectFromNetwork");
 	};
+
+	public static class Builder extends Device.Builder<MobileDevice> {
+		String software;
+		boolean wearable;
+
+		boolean network;
+		boolean bluetooth;
+		boolean wifi;
+
+		@Override
+		public MobileDevice build() {
+			var device = new MobileDevice();
+			device.software = this.software;
+			device.wearable = this.wearable;
+			device.network = this.network;
+			device.bluetooth = this.bluetooth;
+			device.wifi = this.wifi;
+
+			return device;
+		}
+	}
 }

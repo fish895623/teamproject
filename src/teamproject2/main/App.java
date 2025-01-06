@@ -88,6 +88,8 @@ public class App {
 					System.out.println("Logged out successfully!");
 				} else if (command.equalsIgnoreCase("add")) {
 					// TODO add device to cart
+					app.addMenu();
+
 					System.out.println("Device added to cart.");
 				} else if (command.equalsIgnoreCase("view")) {
 					// TODO view cart
@@ -106,5 +108,11 @@ public class App {
 
 		System.out.println("Goodbye!");
 		scanner.close();
+	}
+
+	/** Device list available in device stock */
+	private void addMenu() {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'addMenu'");
 	}
 }

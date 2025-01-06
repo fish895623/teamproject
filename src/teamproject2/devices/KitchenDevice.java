@@ -56,4 +56,21 @@ public class KitchenDevice extends Device implements IIoTDevice, IVoiceControlla
 				this.getClass().getSimpleName() + ".stopCooking");
 	};
 
+	public static class Builder extends Device.Builder<KitchenDevice> {
+		private boolean aboutFood;
+		private int cookingTime;
+		private boolean iotDevice;
+		private boolean voiceDevice;
+
+		public KitchenDevice build() {
+			var device = super.build();
+
+			device.aboutFood = this.aboutFood;
+			device.cookingTime = this.cookingTime;
+			device.iotDevice = this.iotDevice;
+			device.voiceDevice = this.voiceDevice;
+
+			return device;
+		}
+	}
 }
