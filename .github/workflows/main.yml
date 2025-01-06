@@ -13,7 +13,7 @@ jobs:
 
       - uses: axel-op/googlejavaformat-action@v3
         with:
-          args: "--skip-sorting-imports --replace"
+          args: "-a -i"
 
       - name: run eclint
         run: npx eclint fix .
