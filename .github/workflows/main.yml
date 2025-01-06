@@ -12,7 +12,7 @@ jobs:
       - name: run eclint
         run: npx eclint fix .
 
-      - uses: stefanzweifel/git-auto-commit-action
+      - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "FORMAT!!!"
 
