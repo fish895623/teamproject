@@ -6,7 +6,7 @@ public class User {
 	private String userPassword;
 	private String userName;
 	private String email;
-	public final String userLevel = null;
+	private boolean admin = false;
 
 	// constructor
 	public User(String userId, String userPassword, String userName, String email) {
@@ -14,6 +14,17 @@ public class User {
 		this.userPassword = userPassword;
 		this.userName = userName;
 		this.email = email;
+	}
+	public User(String userId, String userPassword, String userName, String email, boolean admin) {
+		this.userId = userId;
+		this.userPassword = userPassword;
+		this.userName = userName;
+		this.email = email;
+		this.admin = admin;
+	}
+
+	public boolean isAdmin() {
+		return admin;
 	}
 
 	// method

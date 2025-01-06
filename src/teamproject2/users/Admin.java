@@ -3,11 +3,10 @@ package teamproject2.users;
 public class Admin extends User {
 	// field
 	private int role; // 0. device manager, 1. user manager
-	public final String userLevel = "admin";
-
 	// constructor
 	public Admin(String userId, String userPassword, String userName, String email) {
-		super(userId, userPassword, userName, email);
+		super(userId, userPassword, userName, email, true);
+		this.role = 0;
 	}
 
 	// method

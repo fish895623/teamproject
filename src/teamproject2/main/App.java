@@ -50,10 +50,6 @@ public class App {
 		return currentUser != null;
 	}
 
-	public boolean isAdmin() {
-		return this.currentUser.userLevel.equals("admin");
-	}
-
 	/**
 	* Entry point
 	*
@@ -62,7 +58,6 @@ public class App {
 	public static void main(String[] args) throws InterruptedException {
 		Scanner scanner = new Scanner(System.in);
 		App app = new App();
-		app.addUserSelectDevice();
 
 		System.out.println("Welcome to the system!");
 
@@ -103,22 +98,28 @@ public class App {
 					app.logout();
 					System.out.println("Logged out successfully!");
 				} else if (command.equalsIgnoreCase("add")) {
-					// TODO add device to cart
-					if (!app.isAdmin()) {
+					if (!app.getCurrentUser().isAdmin()) {
 						app.addUserSelectDevice();
+
+						System.out.print("Enter device name: ");
+						String deviceName = scanner.nextLine();
+						System.out.print("Enter quantity: ");
+						int quantity = scanner.nextInt();
+
+						System.out.printf("Selected device: %s x %d\n", deviceName, quantity);
 					}
 
 					System.out.println("Device added to cart.");
 				} else if (command.equalsIgnoreCase("view")) {
 					// TODO view cart
-					if (!app.isAdmin()) {
+					if (!app.getCurrentUser().isAdmin()) {
 						app.viewCart();
 					}
 
 					System.out.println("Viewing cart...");
 				} else if (command.equalsIgnoreCase("checkout")) {
 					// TODO checkout
-					if (!app.isAdmin()) {
+					if (!app.getCurrentUser().isAdmin()) {
 						app.checkout();
 					}
 
