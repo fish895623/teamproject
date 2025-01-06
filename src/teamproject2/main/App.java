@@ -138,10 +138,7 @@ public class App {
 
 				} else if (command.equalsIgnoreCase("exit")) {
 					break;
-				} else {
-					System.out.println("Invalid command. Please try again.");
-					System.out.println("Type help to see commands");
-				}
+				} 
 			}
 		}
 
