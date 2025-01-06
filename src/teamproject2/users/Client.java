@@ -55,20 +55,24 @@ public class Client extends User {
 	}
 
 	public void viewCart() {
+		float totalPrice = 0.0f;
 		if (cart.isEmpty()) {
 			System.out.println("Your cart is empty.");
 		} else {
 			System.out.println("Cart Items");
+			System.out.printf("| %-20s | %8s | %15s | %15s |\n", "Device Name", "Quantity", "Price", "Total Price");
+			System.out.printf("| -------------------- | -------- | --------------- | --------------- |\n");
 			for (Map<Device, Integer> cartItem : cart) {
 				for (Map.Entry<Device, Integer> entry : cartItem.entrySet()) {
 					Device item = entry.getKey();
 					int quantity = entry.getValue();
+					totalPrice += item.priceNumber * quantity;
 
-					System.out.println(
-							item + " x " + quantity + " " + (item.priceNumber * quantity));
+					System.out.printf("| %-20s | %8d | %15.2f | %15.2f |\n", item.nameString, quantity, item.priceNumber, item.priceNumber * quantity);
 				}
 			}
-			System.out.println("Total items in your cart: " + cart.size());
+			System.out.println("Total items: " + cart.size());
+			System.out.println("Total price: " + totalPrice);
 		}
 	}
 
