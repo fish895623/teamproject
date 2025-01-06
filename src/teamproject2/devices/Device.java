@@ -8,7 +8,7 @@ public class Device implements IDeviceInfo {
 	float weight, height, width, depth;
 	String size;
 
-	String nameString;
+	public String nameString;
 	public double priceNumber;
 
 	Device() {
