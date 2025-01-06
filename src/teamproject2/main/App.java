@@ -93,11 +93,11 @@ public class App {
 				if (command.equalsIgnoreCase("help")) {
 					StringBuffer sb = new StringBuffer();
 					sb.append("Available commands:\n");
-					sb.append("logout\n");
-					sb.append("add\n");
-					sb.append("view\n");
-					sb.append("checkout\n");
-					sb.append("exit\n");
+					sb.append("> logout\n");
+					sb.append("> add\n");
+					sb.append("> view\n");
+					sb.append("> checkout\n");
+					sb.append("> exit\n");
 					System.out.println(sb.toString());
 				} else if (command.equalsIgnoreCase("logout")) {
 					app.logout();
