@@ -1,16 +1,23 @@
 package teamproject2.main;
 
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
+
+import teamproject2.devices.Device;
 import teamproject2.users.Admin;
 import teamproject2.users.Client;
+import teamproject2.users.DeviceManage;
 import teamproject2.users.User;
+import teamproject2.users.UserManage;
 
 public class App {
 	User user;
 	Client client;
 	Admin admin;
+	DeviceManage deviceManage;
+	UserManage userManage;
 
 	Set<User> users;
 	private User currentUser = null;
@@ -44,8 +51,12 @@ public class App {
 		return currentUser != null;
 	}
 
-	/** Entry point */
-	public static void main(String[] args) {
+	/**
+	 * Entry point
+	 *
+	 * @throws InterruptedException
+	 */
+	public static void main(String[] args) throws InterruptedException {
 		Scanner scanner = new Scanner(System.in);
 		App app = new App();
 
@@ -110,9 +121,28 @@ public class App {
 		scanner.close();
 	}
 
-	/** Device list available in device stock */
-	private void addMenu() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'addMenu'");
+	/**
+	 * Device list available in device stock
+	 *
+	 * @throws InterruptedException
+	 */
+	private void addMenu() throws InterruptedException {
+		// display all devices in stock using thread
+		var thread = new Thread(() -> {
+			DeviceManage deviceManage = new DeviceManage();
+			var a = deviceManage.getDeviceStock();
+			System.out.printf("| %-20s | %8s | %15s |\n", "Device Name", "Quantity", "Price");
+			System.out.printf("| -------------------- | -------- | --------------- |\n");
+			for (Map<Device, Integer> stock : a) {
+				for (Map.Entry<Device, Integer> entry : stock.entrySet()) {
+					Device device = entry.getKey();
+					Integer quantity = entry.getValue();
+					System.out.printf("| %-20s | %8d | %15.2f |\n",
+							device.nameString, quantity, device.priceNumber);
+				}
+			}
+		});
+		thread.start();
+		thread.join();
 	}
 }
