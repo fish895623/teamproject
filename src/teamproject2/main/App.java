@@ -71,16 +71,27 @@ public class App {
 					System.out.println("Invalid username or password. Please try again.");
 				}
 			} else {
-				System.out.println("\nLogged in as: " +
-						app.getCurrentUser().getUserName());
-				System.out.print("Enter 'logout' to log out or 'exit' to quit: ");
+				// clear console for each commands
+				System.out.printf("(%s) Enter 'help' to get commands: ", app.getCurrentUser().getUserName());
 				String command = scanner.nextLine();
-
-				if (command.equalsIgnoreCase("logout")) {
+				if (command.equalsIgnoreCase("help")) {
+					StringBuffer sb = new StringBuffer();
+					sb.append("Available commands:\n");
+					sb.append("logout\n");
+					sb.append("add\n");
+					sb.append("exit\n");
+					System.out.println(sb.toString());
+				} else if (command.equalsIgnoreCase("logout")) {
 					app.logout();
 					System.out.println("Logged out successfully!");
+				} else if (command.equalsIgnoreCase("add")) {
+					// TODO add device to cart
+					System.out.println("Device added to cart.");
 				} else if (command.equalsIgnoreCase("exit")) {
 					break;
+				} else {
+					System.out.println("Invalid command. Please try again.");
+					System.out.println("Type help to see commands");
 				}
 			}
 		}
