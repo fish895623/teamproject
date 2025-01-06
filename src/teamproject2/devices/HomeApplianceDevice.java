@@ -58,9 +58,5 @@ public class HomeApplianceDevice extends Device implements IIoTDevice, IVoiceCon
 			device.voiceDevice = this.voiceDevice;
 			return device;
 		}
-
-		protected HomeApplianceDevice createDevice() {
-			return (HomeApplianceDevice) new HomeApplianceDevice();
-		}
 	}
 }
