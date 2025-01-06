@@ -2,7 +2,8 @@ package teamproject2.users;
 
 public class Admin extends User {
 	// field
-	private int role; // 0.  device manager, 1. user manager
+	private int role; // 0. device manager, 1. user manager
+	public final String userLevel = "admin";
 
 	// constructor
 	public Admin(String userId, String userPassword, String userName, String email) {

@@ -12,6 +12,8 @@ public class Client extends User {
 	private List<Map<Device, Integer>> cart;
 	private List<Map<Device, Integer>> purchaseList;
 
+	public final String userLevel = "user";
+
 	// constructors
 	public Client(String userId, String userPassword, String userName, String email) {
 		 super(userId, userPassword, userName, email);

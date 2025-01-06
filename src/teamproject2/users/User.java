@@ -6,6 +6,7 @@ public class User {
 	private String userPassword;
 	private String userName;
 	private String email;
+	public final String userLevel = null;
 
 	// constructor
 	public User(String userId, String userPassword, String userName, String email) {

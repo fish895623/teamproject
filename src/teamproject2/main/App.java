@@ -51,6 +51,10 @@ public class App {
 		return currentUser != null;
 	}
 
+	public boolean isAdmin() {
+		return this.currentUser.userLevel.equals("admin");
+	}
+
 	/**
 	 * Entry point
 	 *

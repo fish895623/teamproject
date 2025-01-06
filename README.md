@@ -42,13 +42,13 @@
 
 - [x] 예외 처리
 - [x] 제네릭
-- [ ] Thread
-  - [ ] Runnable
+- [x] Thread
+  - [x] Runnable
 - [ ] 다형성
   - [ ] 매개변수
   - [x] extends
   - [x] implements
-- [ ] 익명 객체
+- [x] 익명 객체
 - [x] Collections
   - [ ] 해시맵 ( auth )
   - [x] HashSet ( auth )
