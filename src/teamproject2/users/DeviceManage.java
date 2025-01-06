@@ -4,20 +4,29 @@ import java.util.List;
 import java.util.Map;
 
 import teamproject2.devices.Device;
+import teamproject2.devices.HomeApplianceDevice;
 import teamproject2.devices.KitchenDevice;
+import teamproject2.devices.MobileDevice;
 
 public class DeviceManage {
 	// data members
 	private List<Map<Device, Integer>> deviceStock;
 
 	// constructor
-	DeviceManage() {
+	public DeviceManage() {
 		this.deviceStock = new java.util.ArrayList<>(); // initiate
 		// NOTE remove this when finish adding fucntion
 		this.deviceStock.add(Map.of(Device.builder().name("Hello").build(), 1));
 		this.deviceStock.add(Map.of(
-				KitchenDevice.builder().dimensions(1, 2, 3).annualEnergyCost(0).name("water dispenser").build(), 2));
-		this.deviceStock.add(Map.of(KitchenDevice.builder().name("water dispenser2").build(), 1));
+				KitchenDevice.builder()
+						.dimensions(1, 2, 3)
+						.annualEnergyCost(0)
+						.name("water dispenser")
+						.price(100000)
+						.build(),
+				2));
+		this.deviceStock.add(Map.of(HomeApplianceDevice.builder().name("Home test").build(), 1));
+		this.deviceStock.add(Map.of(MobileDevice.builder().name("Mobile Test").build(), 1));
 	}
 
 	// methods
