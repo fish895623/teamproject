@@ -101,7 +101,7 @@ User --|> Client
 
 ```
 
-# Optimized Class Diagram
+# Fixed Class Diagram
 
 ```mermaid
 classDiagram
@@ -216,17 +216,30 @@ classDiagram
 ## 역할분담
 
 - 박수아
-  - [ ] ICookingDevice
-  - [ ] IDeviceInfo
-  - [ ] IIoTDevice
-  - [ ] INetworkConnectable
-  - [ ] IVoiceControllable
+  - ICookingDevice
+  - IDeviceInfo
+  - IIoTDevice
+  - INetworkConnectable
+  - IVoiceControllable
 - 민정현
-  - [ ] User
-  - [ ] Admin
-  - [ ] Client
+  - User
+  - Admin
+  - Client
 - 배성훈
-  - [ ] Device
-  - [ ] MobileDevice
-  - [ ] HomeApplianceDevice
-  - [ ] KitchenDevice
+  - Device
+  - MobileDevice
+  - HomeApplianceDevice
+  - KitchenDevice
+  - 로그인 기능 구현
+
+# TODO
+  - [x] 클래스 다이어그램 작성
+  - [ ] 클라이언트 장바구니 추가
+  - [ ] 장바구니 리스트
+  - [ ] 장바구니 전체 가격
+  - [ ] 잔여 수량
+  - [ ] 제품 추가
+  - [ ] 유저 추가
+  - [ ] 유저 삭제
+  - [ ] 유저 수정
+  
