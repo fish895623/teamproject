@@ -16,8 +16,9 @@ public class App {
 	User user;
 	Client client;
 	Admin admin;
-	DeviceManage deviceManage;
+	DeviceManage deviceManage = new DeviceManage();
 	UserManage userManage;
+
 
 	Set<User> users;
 	private User currentUser = null;
@@ -105,25 +106,24 @@ public class App {
 						String deviceName = scanner.nextLine();
 						System.out.print("Enter quantity: ");
 						int quantity = scanner.nextInt();
-
-						System.out.printf("Selected device: %s x %d\n", deviceName, quantity);
 					}
 
-					System.out.println("Device added to cart.");
 				} else if (command.equalsIgnoreCase("view")) {
 					// TODO view cart
 					if (!app.getCurrentUser().isAdmin()) {
 						app.viewCart();
+
+						System.out.println("Viewing cart...");
 					}
 
-					System.out.println("Viewing cart...");
 				} else if (command.equalsIgnoreCase("checkout")) {
 					// TODO checkout
 					if (!app.getCurrentUser().isAdmin()) {
 						app.checkout();
+
+						System.out.println("Checking out...");
 					}
 
-					System.out.println("Checking out...");
 				} else if (command.equalsIgnoreCase("exit")) {
 					break;
 				} else {
@@ -138,13 +138,11 @@ public class App {
 	}
 
 	private void checkout() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'checkout'");
+		System.out.println("Checkout");
 	}
 
 	private void viewCart() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'viewCart'");
+		System.out.println("View Items");
 	}
 
 	/**
@@ -157,7 +155,6 @@ public class App {
 		var thread =
 				new Thread(
 						() -> {
-							DeviceManage deviceManage = new DeviceManage();
 							var a = deviceManage.getDeviceStock();
 							System.out.printf(
 									"| %-20s | %8s | %15s |\n", "Device Name", "Quantity", "Price");
