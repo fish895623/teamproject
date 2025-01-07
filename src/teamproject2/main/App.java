@@ -18,11 +18,10 @@ public class App {
 	Admin admin;
 	DeviceManage deviceManage = new DeviceManage();
 
-	Set<User> users;
+	Set<User> users = new HashSet<>();
 	private User currentUser = null;
 
 	App() throws InvalidEmailException {
-		this.users = new HashSet<>();
 		this.users.add(new Admin("admin", "admin", "asdf1", "asdf@gmail.com"));
 		this.users.add(new Client("client", "client", "asdf2", "asdf@gmail.com"));
 	}
