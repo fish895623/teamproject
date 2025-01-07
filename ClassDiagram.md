@@ -2,15 +2,14 @@
 
 구매장와 매니저를 지정하여 물품들을 콘솔(로그인)로 구매 및 관리
 
-# Class Diagram
+# Device Diagram
 
 ```mermaid
 classDiagram
     class Device {
         <<abstract>>
-        +int voltage
-        +int warranty
         +String powerConsumption
+        +int warranty
         +String carbonEmission
         +float annualEnergyCost
         +float weight
@@ -18,9 +17,9 @@ classDiagram
         +float width
         +float depth
         +String size
-        +turnOn()
-        +turnOff()
-        +checkWarranty()
+        +String nameString
+        +double priceNumber
+        +printDeviceName()
     }
 
     class INetworkConnectable {
@@ -46,6 +45,7 @@ classDiagram
         +setCookingTime(int time)
         +startCooking()
         +stopCooking()
+        +cleanDevice()
     }
 
     class IDeviceInfo {
@@ -62,13 +62,14 @@ classDiagram
         +boolean wifi
         +connectToWifi(String network)
         +disconnectFromWifi()
-        +toggleBluetooth()
-        +updateSoftware()
-        +checkBatteryLevel()
+        +connectToBluetooth()
+        +disconnectFromBluetooth()
     }
 
     class HomeApplianceDevice {
         +String location
+        +boolean iotDevice
+        +boolean voiceDevice
         +setLocation(String newLocation)
         +scheduleOperation(DateTime time)
         +cancelScheduledOperation()
@@ -76,14 +77,53 @@ classDiagram
 
     class KitchenDevice {
         +boolean aboutFood
+        +int cookingTime
+        +boolean iotDevice
+        +boolean voiceDevice
+
         +cleanDevice()
     }
 
+    class DeviceManage {
+    	deviceStock
+    	checkDeviceStock(String)
+    	DeviceEditResult [record]
+    	editNumDevice(String, int)
+    	getDeviceStock()
+    	setDeviceStock(List)
+    }
+
+    Device <|-- MobileDevice
+    Device <|-- HomeApplianceDevice
+    Device <|-- KitchenDevice
+    INetworkConnectable <-- MobileDevice
+    IIoTDevice <-- HomeApplianceDevice
+    IIoTDevice <-- KitchenDevice
+    IVoiceControllable <-- HomeApplianceDevice
+    IVoiceControllable <-- KitchenDevice
+    ICookingDevice <-- KitchenDevice
+    IDeviceInfo <-- Device
+```
+
+## User Diagram
+
+```mermaid
+classDiagram
     class User {
-        -String user_id
-        -String user_pw
-        -String name
+        -String userId
+        -String userPassword
+        -String userName
         -String email
+        -boolean admin
+        -isAdmin()
+        +getUserId()
+        +getUserPassword()
+        +getUserName()
+        +getEmail()
+        +setUserId(String)
+        +setUserPassword(String)
+        +setUserName(String)
+        +setEmail(String)
         -emailValidator()
     }
 
@@ -91,27 +131,48 @@ classDiagram
         -String role
         +manageDevices()
         +manageUsers()
+        +getRole()
+        +setRole(int)
     }
 
     class Client {
         -String customerType
         -String customerAddress
+        -List<Map<Device, Integer>> cart
+        -List<Map<Device, Integer>> purchaseList
         +viewDevices()
+        +addToChart()
+        +viewChart()
+        +totalPriceInCart()
+        +checkout()
+        +viewPurchaseList()
+        +getCustomerType()
+        +getCustomerAddress()
+        +getPurchaseList()
+        +getChart()
+        +setCustomerType()
+        +setCustomerAddress()
+        +setPurchaseList()
         +purchaseDevice()
     }
+    class UserManage {
+        userList
+        addUser(String, String, String, String)
+        deleteUser()
+        modifyUser()
+        getUserList()
+        setUserList()
+    }
 
-    Device --|> MobileDevice
-    Device --|> HomeApplianceDevice
-    Device --|> KitchenDevice
-    INetworkConnectable --> MobileDevice
-    IIoTDevice --> HomeApplianceDevice
-    IIoTDevice --> KitchenDevice
-    IVoiceControllable --> HomeApplianceDevice
-    IVoiceControllable --> KitchenDevice
-    ICookingDevice --> KitchenDevice
-    IDeviceInfo --> Device
-    User --|> Admin
-    User --|> Client
+    User <|-- Admin
+    User <|-- Client
+```
+
+## User defined Exception
+
+```mermaid
+classDiagram
+class InvalidEmailException
 ```
 
 ## 역할분담
@@ -138,16 +199,15 @@ classDiagram
 
 - [x] 클래스 다이어그램 작성
 - [x] 로그인 기능 구현
-- [ ] 장바구니 제품 추가
+- [x] 장바구니 제품 추가
   - [x] DeviceManage
-- [ ] 장바구니 리스트
+- [x] 장바구니 리스트
   - [x] DeviceManage
-- [ ] 장바구니 전체 가격
+- [x] 장바구니 전체 가격
   - [x] DeviceManage
-- [ ] 잔여 수량
+- [x] 잔여 수량
   - [x] DeviceManage
 - [ ] 제품 입고
-  - [x] DeviceManage
 - [ ] 유저 추가
 - [ ] 유저 삭제
 - [ ] 유저 수정
