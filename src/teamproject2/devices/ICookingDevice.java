@@ -1,11 +1,11 @@
 package teamproject2.devices;
 
 public interface ICookingDevice {
-    public void setCookingTime(int time);
+	public void setCookingTime(int time);
 
-    public void startCooking();
+	public void startCooking();
 
-    public void stopCooking();
+	public void stopCooking();
 
-    public void cleanDevice();
+	public void cleanDevice();
 }
