@@ -6,7 +6,6 @@ import teamproject2.users.Client;
 import teamproject2.users.DeviceManage;
 import teamproject2.users.InvalidEmailException;
 import teamproject2.users.User;
-import teamproject2.users.UserManage;
 
 import java.util.HashSet;
 import java.util.Map;
@@ -18,7 +17,6 @@ public class App {
 	Client client;
 	Admin admin;
 	DeviceManage deviceManage = new DeviceManage();
-	UserManage userManage;
 
 	Set<User> users;
 	private User currentUser = null;
