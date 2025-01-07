@@ -49,11 +49,11 @@ public class App {
 	}
 
 	/**
-	* Entry point
-	*
-	* @throws InterruptedException
-	* @throws InvalidEmailException
-	*/
+	 * Entry point
+	 *
+	 * @throws InterruptedException
+	 * @throws InvalidEmailException
+	 */
 	public static void main(String[] args) throws InterruptedException, InvalidEmailException {
 		Scanner scanner = new Scanner(System.in);
 		App app = new App();
@@ -159,24 +159,24 @@ public class App {
 	*/
 	private void addUserSelectDevice() throws InterruptedException {
 		// display all devices in stock using thread
-		var thread =
-				new Thread(
-						() -> {
-							var a = deviceManage.getDeviceStock();
-							System.out.printf(
-									"| %-20s | %8s | %15s |\n", "Device Name", "Quantity", "Price");
-							System.out.printf(
-									"| -------------------- | -------- | --------------- |\n");
-							for (Map<Device, Integer> stock : a) {
-								for (Map.Entry<Device, Integer> entry : stock.entrySet()) {
-									Device device = entry.getKey();
-									Integer quantity = entry.getValue();
-									System.out.printf(
-											"| %-20s | %8d | %15.2f |\n",
-											device.nameString, quantity, device.priceNumber);
-								}
+		var thread = new Thread(
+				new Runnable() {
+					@Override
+					public void run() {
+						var a = deviceManage.getDeviceStock();
+						System.out.printf("| %-20s | %8s | %15s |\n", "Device Name", "Quantity", "Price");
+						System.out.printf("| -------------------- | -------- | --------------- |\n");
+						for (Map<Device, Integer> stock : a) {
+							for (Map.Entry<Device, Integer> entry : stock.entrySet()) {
+								Device device = entry.getKey();
+								Integer quantity = entry.getValue();
+								System.out.printf(
+										"| %-20s | %8d | %15.2f |\n",
+										device.nameString, quantity, device.priceNumber);
 							}
-						});
+						}
+					}
+				});
 		thread.start();
 		thread.join();
 	}
