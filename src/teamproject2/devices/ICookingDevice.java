@@ -6,4 +6,6 @@ public interface ICookingDevice {
 	public void startCooking();
 
 	public void stopCooking();
+
+	public void cleanDevice();
 }

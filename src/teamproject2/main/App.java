@@ -4,6 +4,7 @@ import teamproject2.devices.Device;
 import teamproject2.users.Admin;
 import teamproject2.users.Client;
 import teamproject2.users.DeviceManage;
+import teamproject2.users.InvalidEmailException;
 import teamproject2.users.User;
 import teamproject2.users.UserManage;
 
@@ -22,7 +23,7 @@ public class App {
 	Set<User> users;
 	private User currentUser = null;
 
-	App() {
+	App() throws InvalidEmailException {
 		this.users = new HashSet<>();
 		this.users.add(new Admin("admin", "admin", "asdf1", "asdf@gmail.com"));
 		this.users.add(new Client("client", "client", "asdf2", "asdf@gmail.com"));
@@ -51,11 +52,12 @@ public class App {
 	}
 
 	/**
-	* Entry point
-	*
-	* @throws InterruptedException
-	*/
-	public static void main(String[] args) throws InterruptedException {
+	 * Entry point
+	 *
+	 * @throws InterruptedException
+	 * @throws InvalidEmailException
+	 */
+	public static void main(String[] args) throws InterruptedException, InvalidEmailException {
 		Scanner scanner = new Scanner(System.in);
 		App app = new App();
 

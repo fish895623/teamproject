@@ -9,19 +9,21 @@ public class User {
 	private boolean admin = false;
 
 	// constructor
-	public User(String userId, String userPassword, String userName, String email) {
+	public User(String userId, String userPassword, String userName, String email) throws InvalidEmailException {
 		this.userId = userId;
 		this.userPassword = userPassword;
 		this.userName = userName;
 		this.email = email;
+		this.emailValidator();
 	}
 
-	public User(String userId, String userPassword, String userName, String email, boolean admin) {
+	public User(String userId, String userPassword, String userName, String email, boolean admin) throws InvalidEmailException {
 		this.userId = userId;
 		this.userPassword = userPassword;
 		this.userName = userName;
 		this.email = email;
 		this.admin = admin;
+		this.emailValidator();
 	}
 
 	public boolean isAdmin() {
@@ -40,9 +42,9 @@ public class User {
 	// }
 
 	// email validation
-	public void emailValidator(String email) throws InvalidEmailException {
+	public void emailValidator() throws InvalidEmailException {
 		// null check and empty check
-		if (email == null || email.trim().isEmpty()) {
+		if (this.email == null || this.email.trim().isEmpty()) {
 			throw new InvalidEmailException("Email cannot be null or empty.");
 		}
 
@@ -51,7 +53,7 @@ public class User {
 				"^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
 
 		// email validation
-		if (email.matches(emailRegex)) {
+		if (this.email.matches(emailRegex)) {
 			System.out.println("Email is valid.");
 		} else {
 			throw new InvalidEmailException("Invalid email format.");

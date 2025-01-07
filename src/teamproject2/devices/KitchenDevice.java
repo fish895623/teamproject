@@ -7,7 +7,8 @@ public class KitchenDevice extends Device
 	boolean iotDevice;
 	boolean voiceDevice;
 
-	void cleanDevice() {
+	@Override
+	public void cleanDevice() {
 		// TODO: Auto-generated method stub
 		throw new UnsupportedOperationException(this.getClass().getSimpleName() + ".cleanDevice");
 	}

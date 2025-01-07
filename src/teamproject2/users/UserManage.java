@@ -16,7 +16,7 @@ public class UserManage {
 
 	// methods
 	// add user
-	public void addUser(String userId, String userPassword, String userName, String email) {
+	public void addUser(String userId, String userPassword, String userName, String email) throws InvalidEmailException {
 		User newUser = new User(userId, userPassword, userName, email);
 		if (userList.isEmpty()) {
 			Map<String, User> userGroup = new HashMap<>();

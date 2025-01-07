@@ -11,14 +11,12 @@ public class HomeApplianceDevice extends Device implements IIoTDevice, IVoiceCon
 		// TODO: Auto-generated method stub
 		throw new UnsupportedOperationException(this.getClass().getSimpleName() + ".setLocation");
 	}
-	;
 
 	void scheduleOperation(Date time) {
 		// TODO: Auto-generated method stub
 		throw new UnsupportedOperationException(
 				this.getClass().getSimpleName() + ".scheduleOperation");
 	}
-	;
 
 	void cancelScheduledOperation() {
 		// TODO: Auto-generated method stub
@@ -52,7 +50,6 @@ public class HomeApplianceDevice extends Device implements IIoTDevice, IVoiceCon
 		throw new UnsupportedOperationException(
 				this.getClass().getSimpleName() + ".disconnectFromIoT");
 	}
-	;
 
 	public static class Builder extends Device.Builder<HomeApplianceDevice> {
 		private String location;

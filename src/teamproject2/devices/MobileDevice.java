@@ -12,42 +12,36 @@ public class MobileDevice extends Device implements INetworkConnectable {
 		// TODO: Auto-generated method stub
 		throw new UnsupportedOperationException(this.getClass().getSimpleName() + ".connectToWifi");
 	}
-	;
 
 	void disconnectFromWifi() {
 		// TODO: Auto-generated method stub
 		throw new UnsupportedOperationException(
 				this.getClass().getSimpleName() + ".disconnectFromWifi");
 	}
-	;
 
 	void connectToBluetooth(String device) {
 		// TODO: Auto-generated method stub
 		throw new UnsupportedOperationException(
 				this.getClass().getSimpleName() + ".connectToBluetooth");
 	}
-	;
 
 	void updateSoftware() {
 		// TODO: Auto-generated method stub
 		throw new UnsupportedOperationException(
 				this.getClass().getSimpleName() + ".updateSoftware");
 	}
-	;
 
 	void checkBatteryLevel() {
 		// TODO: Auto-generated method stub
 		throw new UnsupportedOperationException(
 				this.getClass().getSimpleName() + ".checkBatteryLevel");
 	}
-	;
 
 	void enableNetworkConnection() {
 		// TODO: Auto-generated method stub
 		throw new UnsupportedOperationException(
 				this.getClass().getSimpleName() + ".enableNetworkConnection");
 	}
-	;
 
 	void disableNetworkConnection() {
 		// TODO: Auto-generated method stub
@@ -68,7 +62,6 @@ public class MobileDevice extends Device implements INetworkConnectable {
 		throw new UnsupportedOperationException(
 				this.getClass().getSimpleName() + ".disconnectFromNetwork");
 	}
-	;
 
 	public static class Builder extends Device.Builder<MobileDevice> {
 		String software;

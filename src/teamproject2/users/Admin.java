@@ -5,7 +5,7 @@ public class Admin extends User {
 	private int role; // 0. device manager, 1. user manager
 
 	// constructor
-	public Admin(String userId, String userPassword, String userName, String email) {
+	public Admin(String userId, String userPassword, String userName, String email) throws InvalidEmailException {
 		super(userId, userPassword, userName, email, true);
 		this.role = 0;
 	}

@@ -14,7 +14,7 @@ public class Client extends User {
 	private List<Map<Device, Integer>> purchaseList = new ArrayList<>();
 
 	// constructors
-	public Client(String userId, String userPassword, String userName, String email) {
+	public Client(String userId, String userPassword, String userName, String email) throws InvalidEmailException {
 		super(userId, userPassword, userName, email, false);
 	}
 
@@ -25,7 +25,7 @@ public class Client extends User {
 			String userName,
 			String email,
 			String customerType,
-			String customerAdress) {
+			String customerAdress) throws InvalidEmailException {
 		super(userId, userPassword, userName, email);
 		this.customerType = customerType;
 		this.customerAdress = customerAdress;
@@ -39,7 +39,7 @@ public class Client extends User {
 			String email,
 			String customerType,
 			String customerAdress,
-			List<Map<Device, Integer>> purchaseList) {
+			List<Map<Device, Integer>> purchaseList) throws InvalidEmailException {
 		super(userId, userPassword, userName, email);
 		this.customerType = customerType;
 		this.customerAdress = customerAdress;
