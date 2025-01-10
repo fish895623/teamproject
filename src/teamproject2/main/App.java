@@ -55,6 +55,7 @@ public class App {
 	 * @throws InvalidEmailException
 	 */
 	public static void main(String[] args) throws InterruptedException, InvalidEmailException {
+		System.out.println("Hello World");
 		Scanner scanner = new Scanner(System.in);
 		App app = new App();
 
@@ -153,10 +154,10 @@ public class App {
 	}
 
 	/**
-	* Device list available in device stock
-	*
-	* @throws InterruptedException
-	*/
+	 * Device list available in device stock
+	 *
+	 * @throws InterruptedException
+	 */
 	private void addUserSelectDevice() throws InterruptedException {
 		// display all devices in stock using thread
 		var thread = new Thread(
